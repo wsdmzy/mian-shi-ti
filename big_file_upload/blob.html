@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="" alt="" id="pic" width="300px" >
+  <input type="file" name="" id="file">
+  <script>
+    // es6 file对象  blob  blob://  在上传上传解决什么问题
+    // es5时代 文件只有上传带服务器后，静态服务器提供一个远程地址给我们，才能看到我们上传的这张图片。
+    // es6在本地客户端操作文件的能力  file对象， blob协议在本地就把它立马显示出来， 配上上传进度，更好的用户的体验。
+    document.getElementById('file')
+      .addEventListener('change', e => {
+        const file = e.target.files[0];
+        // console.log(Object.prototype.toString.call(file))
+        const URL = window.URL;
+        const objectUrl = URL.createObjectURL(file);
+        console.log(objectUrl)
+        console.log(Object.prototype.toString.call(objectUrl))
+        const pic = document.getElementById('pic')
+        
+        pic.src = objectUrl;
+        pic.onload = function() {
+          URL.revokeObjectURL(objectUrl);
+          console.log('为了获得最佳性能和内存使用状态，手动释放对象')
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 函数是js里的一等公民 new Object
+    // 函数可以当构造函数来用的  如何限制  函数的调用一定是new？
+    const Person = (name) => {
+      //差别  函数还有其他功能 this arguments super
+      // if(new.target !== undefined) {
+      //   this.name = name
+      // } else {
+      //   throw new Error("必须使用new 命令 才能生成实例")
+      // }
+      this.name = name
+    }
+
+    // Person.prototype.sayName = function() {
+    //   console.log(`我是${this.name}`)
+    // }
+
+    let l = new Person("小李")
+    console.log(l.name)
+
+    // Person("小李")  //throw error
+    // {}
+    // 函数和方法是两码事
+    // 原型链顶端是{}  Object
+    // var o = Object()  //在干嘛？ 
+    // // console.log(o)
+    // console.log(o.__proto__ == Object.prototype)  //true
+
+    // function MyObj() {}
+    // typeof MyObj //function
+    // var mo = new MyObj()
+    // console.log(mo.__proto__ == MyObj.prototype) //true
+
+
+  </script>
+</body>
+</html>

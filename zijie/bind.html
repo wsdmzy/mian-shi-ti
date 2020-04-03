@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // bind 返回一个函数
+    function isType(type, data) {
+      type = `[object ${type}]`
+      // console.log(type)
+      return Object.prototype.toString.call(data) === type
+    }
+    a = [1]
+    console.log(isType('Number',a))
+    console.log(isType('Array',a))
+    // bind更优雅  柯里化curry
+    const isArrtype = isType.bind(null, 'Array')
+    console.log(isArrtype(a))
+    // 简单版本
+    // this
+    Function.prototype.myBind = function(thisObj, ...arg1) {
+      // 谁调用bind  最终拼好的参数传给谁
+      let fn = this
+      function foo(...arg2) {
+        // 合并参数
+        const args = arg1.concat(arg2)
+        // 调用  考虑this
+        // fn调用完之后有结果返回
+        return fn.apply(thisObj,args)
+      }
+      return foo
+    }
+
+    const isArrtype1 = isType.myBind(null, 'Array')
+    console.log(isArrtype1(a))
+
+    function foo(a,b,c) {
+      return this.d + a + b +c
+    }
+    const obj = {d:5}
+    var bar = foo.myBind(obj,1)
+    console.log(bar(2,3))
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+Arguments: 
+  D:\node\node.exe C:\Users\94932\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add vue-template-complier
+
+PATH: 
+  F:\;D:\app\94932\product\11.2.0\dbhome_1\bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\node\;d:\Program Files\Git\cmd;D:\Program Files\python\Python37;";D:\Program Files\openjdk-11.0.2_windows-x64_bin\jdk-11.0.2\\bin;D:\Program Files\openjdk-11.0.2_windows-x64_bin\jdk-11.0.2\\jre\bin;";E:\flutter\flutter\bin;E:\flutter\flutter\bin\cache\dart-sdk\bin;"D:\ASSdk\android-sdk-windows\tools;D:\ASSdk\android-sdk-windows\platform-tools";D:\Go\bin;D:\OpenSSL-Win64\bin;C:\Users\94932\scoop\shims;C:\Users\94932\AppData\Local\Microsoft\WindowsApps;C:\Users\94932\AppData\Roaming\npm;D:\Program Files\Git;C:\Users\94932\AppData\Local\Yarn\bin;C:\Users\94932\AppData\Local\Programs\Microsoft VS Code\bin;D:\Program Files\MongoDB\Server\4.1\bin;E:\mysql\bin;C:\Users\94932\go\bin;D:\Bandizip\
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/vue-template-complier: Not found
+      at Request.params.callback [as _callback] (C:\Users\94932\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66975:18)
+      at Request.self.callback (C:\Users\94932\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140727:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (C:\Users\94932\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141699:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (C:\Users\94932\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141621:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

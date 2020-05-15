@@ -1,0 +1,30 @@
+2020-05-13 16:16:11,798 ERROR 10044 [-/127.0.0.1/-/50ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 10044
+hostname: DESKTOP-PUP86H4
+
+2020-05-13 16:17:59,757 ERROR 13264 [-/127.0.0.1/-/7ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\Project\mian-shi-ti\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 13264
+hostname: DESKTOP-PUP86H4
+

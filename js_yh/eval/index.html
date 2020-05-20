@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // eval 不该用
+    const xhr = new XMLHttpRequest();  //ie 6.0 json还没有发明
+    xhr.onreadystatechange = function(event) {
+      // console.log(event)
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // text => json
+        // const data = JSON.parse(event.target.responseText)
+        // eval  js 把字符串执行
+        const data = eval(event.target.responseText)
+        console.log(data)
+      }
+    }
+    xhr.open("GET", "./post.json", true)
+    xhr.send()
+  </script>
+</body>
+</html>

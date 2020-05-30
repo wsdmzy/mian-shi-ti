@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    
+  </div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#root',
+      data() {
+        return {
+          arr: [1,2,3]
+        }
+      },
+      methods: {
+        change() {  
+        //  this.arr[1] = 99999   //下标操作无效   性能考虑
+        //  this.arr[1000] = 100000
+        //   console.log(this.arr)
+        this.arr.push(5)
+        }
+      },
+      template: `<div>
+          <span @click="change" v-for="(item,index) in arr" :key="index">{{item}}</span>
+        <div>`
+    })
+  </script>
+</body>
+</html>

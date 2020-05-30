@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const oldArr = Array.prototype
+    const new_arr = Object.create(oldArr)
+    let a = ['push','pop','shift']
+    // a.forEach(item => console.log(item))
+
+    a.forEach(methodName => {
+      new_arr[methodName] = function() {
+        updateView();
+        oldArr[methodName].call(this, ...arguments);
+      }
+    })
+
+
+    // 观察者模式  
+    function defineReactive(target, key, value) {
+      if (typeof value === 'object' ) observer(value)
+      Object.defineProperty(target, key, {
+        get: function() {
+          return value
+        },
+        set: function(newValue) {
+          if (typeof value === 'object' ) observer(value)
+          if (newValue !== value) {
+            value = newValue
+            updateView() //更新视图
+          }
+          
+        }
+      })
+    }
+
+    function updateView() {
+      console.log("视图跟新")
+    }
+
+    // 元编程  get set 能力
+    function observer(target) {
+      if (typeof target !== 'object' || target === null) {
+        return target
+      }
+
+      if (Array.isArray(target)) {  //target.constructor
+          target.__proto__ = new_arr
+        }
+
+      for (let key in target) {
+
+        defineReactive(target, key, target[key])
+      }
+
+    }
+
+    const data = {
+      name: 'lzm',
+      info: {
+        address: '北京'
+      },
+      nums: [10,20,30]
+    }
+    observer(data)
+    data.name = 'hhhh'
+    data.info.address = '深圳'
+    // data.nums[0] = 11  //不需要响应
+    data.nums.push(40)   //支持
+
+  </script>
+</body>
+</html>

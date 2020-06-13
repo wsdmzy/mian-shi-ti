@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function func() {
+    //   // 非严格模式下
+    //   // 指向包装类
+    //   console.log(this)
+    // }
+    
+    // func.call(1)   //简单数据类型   指向包装类
+    // func.call(null)   // 执行window
+
+    var personLike = {  //json object
+      0: 'a',
+      1: 'b',  //这里key为2的话，覆盖
+      length: 2 //内置属性
+    }
+    // 给personLike 添加两个值(c,d)，他的key无所谓
+    // console.log(Object.assign(personLike,{2: 'c', 3: 'd'}))
+    Array.prototype.push.call(personLike,'c')
+    Array.prototype.push.call(personLike,'d')
+    console.log(personLike)
+  </script>
+</body>
+</html>

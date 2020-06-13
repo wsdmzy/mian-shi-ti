@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+  </div>
+  <script>
+    const ele = document.querySelector('.box')
+    // ele.style.left = 100 + ele.offsetLeft + 'px'
+    // ele.style.top = 100 + ele.offsetTop + 'px'
+    // 触发几次回流？reflow  repaint  2次reflow，2次刷新队列
+    // 浏览器有个优化机制，队列 cssText
+    // offsetLeft  offsetTop 布局信息，Layout，读取，冲破浏览器的优化，队列被清空
+    
+    // 优化   存储起来  2次回流，1次刷新队列
+    const currentLeft = ele.offsetLeft,
+      currentTop = ele.offsetTop //存储起来
+      ele.style.left = 100 + ele.currentLeft + 'px'
+      ele.style.top = 100 + ele.currentTop + 'px'
+
+  </script>
+</body>
+</html>
